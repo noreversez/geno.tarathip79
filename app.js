@@ -191,9 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Speech Bubble Loop & Click Interaction
     // ==========================================
     const messages = [
-        "สวัสดีครับมีอะไรให้ช่วยมั้ย",
-        "อะฮิๆๆๆ",
-        "โย่วววว"
+        "สวัสดีครับผู้กอง! 👮‍♂️",
+        "มีคดีอะไรให้ผมช่วยสืบไหมครับ?",
+        "ระบบวิเคราะห์ OSINT พร้อมครับ! 🔍",
+        "วันนี้รับกาแฟไหมครับ? ☕",
+        "Pixel Art นี่มันเท่จริงๆ! 👾"
     ];
     let currentMsgIndex = 0;
     const bubble = document.getElementById('robot-bubble');
@@ -215,10 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     };
 
-    // Start cycling every 15 seconds
-    messageCycleInterval = setInterval(cycleMessages, 15000);
+    // Start cycling every 8 seconds
+    messageCycleInterval = setInterval(cycleMessages, 8000);
 
-    // Click reaction (Blush & Jump/Wiggle)
+    // Click reaction (Blush & Random Message)
     if (bgRobot && robotBody && robotHead && bubble) {
         bgRobot.addEventListener('click', () => {
             if (isShy) return; // Prevent double click spamming
@@ -228,10 +230,17 @@ document.addEventListener('DOMContentLoaded', () => {
             robotHead.classList.add('blushing');
             robotBody.classList.add('clicked-shy');
             
-            // Shy response
+            // Random message on click
             bubble.style.opacity = 0;
             setTimeout(() => {
-                bubble.textContent = "งื้อออ... จิ้มเค้าทำไม เขินนะ! 😳";
+                const clickMessages = [
+                    "โอ๊ะ! จิ้มเค้าทำไม 😳",
+                    "ระบบพร้อมลุยครับ! 🚀",
+                    "มีอะไรให้รับใช้ครับผู้กอง?",
+                    "ตึ๊ดๆๆ... กำลังประมวลผล 🤖",
+                    "ชอบ Pixel Art เหมือนกันเลย!"
+                ];
+                bubble.textContent = clickMessages[Math.floor(Math.random() * clickMessages.length)];
                 bubble.style.opacity = 1;
             }, 200);
 

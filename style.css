@@ -818,14 +818,14 @@ body.dark-mode .background-robot {
     top: 0;
     right: 5px;
     background-color: var(--notion-bg);
-    border: 1px solid var(--notion-border);
-    border-radius: 8px;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     padding: 6px 12px;
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--notion-text);
     white-space: nowrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Blocky shadow */
     animation: bubble-float 3s ease-in-out infinite;
     z-index: 1000;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -834,13 +834,13 @@ body.dark-mode .background-robot {
 .robot-speech-bubble::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -6px;
     right: 30px;
     width: 8px;
     height: 8px;
     background-color: var(--notion-bg);
-    border-right: 1px solid var(--notion-border);
-    border-bottom: 1px solid var(--notion-border);
+    border-right: 2px solid var(--notion-border);
+    border-bottom: 2px solid var(--notion-border);
     transform: rotate(45deg);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -860,15 +860,15 @@ body.dark-mode .background-robot {
     width: 48px;
     height: 42px;
     background-color: var(--notion-bg-gray);
-    border: 1px solid var(--notion-border);
-    border-radius: 8px;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 3;
     position: relative;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Blocky shadow */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -876,15 +876,15 @@ body.dark-mode .background-robot {
     width: 36px;
     height: 36px;
     background-color: var(--notion-bg-gray);
-    border: 1px solid var(--notion-border);
-    border-radius: 6px;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     margin-top: 2px;
     z-index: 2;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.03);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1); /* Blocky shadow */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -892,24 +892,24 @@ body.dark-mode .background-robot {
     width: 18px;
     height: 14px;
     background-color: var(--notion-blue-light);
-    border: 1px solid var(--notion-border);
-    border-radius: 3px;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .robot-arm {
-    width: 6px;
+    width: 8px;
     height: 22px;
     background-color: var(--notion-bg-gray);
-    border: 1px solid var(--notion-border);
-    border-radius: 3px;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     position: absolute;
     z-index: 1;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .arm-left {
-    left: 10px;
+    left: 8px;
     top: 48px;
     transform-origin: top center;
     animation: robot-wave-full 1.8s ease-in-out infinite;
@@ -919,17 +919,17 @@ body.dark-mode .background-robot {
     content: '';
     position: absolute;
     left: -2px;
-    bottom: -3px;
+    bottom: -4px;
     width: 8px;
     height: 8px;
     background-color: var(--notion-bg-gray);
-    border: 1px solid var(--notion-border);
-    border-radius: 50%;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .arm-right {
-    right: 10px;
+    right: 8px;
     top: 48px;
     transform-origin: top center;
     transform: rotate(15deg);
@@ -938,16 +938,16 @@ body.dark-mode .background-robot {
 .robot-legs {
     display: flex;
     gap: 10px;
-    margin-top: -1px;
+    margin-top: -2px;
     z-index: 1;
 }
 
 .robot-leg {
-    width: 6px;
+    width: 8px;
     height: 12px;
     background-color: var(--notion-text-muted);
-    border: 1px solid var(--notion-border);
-    border-radius: 0 0 3px 3px;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -976,9 +976,8 @@ body.dark-mode .background-robot {
     width: 6px;
     height: 4px;
     background-color: #ff6b81;
-    border-radius: 50%;
+    border-radius: 0; /* Pixel Art */
     opacity: 0;
-    filter: blur(0.5px);
     transition: opacity 0.3s ease;
 }
 
@@ -995,8 +994,8 @@ body.dark-mode .background-robot {
     width: 12px;
     height: 12px;
     background-color: #ffffff;
-    border: 1px solid var(--notion-border);
-    border-radius: 50%;
+    border: 2px solid var(--notion-border);
+    border-radius: 0; /* Pixel Art */
     position: relative;
     display: flex;
     align-items: center;
@@ -1011,45 +1010,52 @@ body.dark-mode .robot-eye {
 }
 
 .robot-pupil {
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background-color: var(--notion-blue);
-    border-radius: 50%;
+    border-radius: 0; /* Pixel Art */
     position: absolute;
-    top: calc(50% - 2px);
-    left: calc(50% - 2px);
+    top: calc(50% - 3px);
+    left: calc(50% - 3px);
     transition: transform 0.05s ease-out;
 }
 
 .robot-mouth {
     width: 14px;
-    height: 7px;
-    border: 1.5px solid var(--notion-text-muted);
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    transition: border-color 0.3s ease;
+    height: 4px;
+    background-color: var(--notion-text-muted);
+    border: none;
+    border-radius: 0; /* Pixel Art */
+    transition: background-color 0.3s ease;
 }
 
 .robot-ears {
     position: absolute;
-    width: 56px;
+    width: 58px;
     display: flex;
     justify-content: space-between;
     top: calc(50% - 5px);
     z-index: -1;
+    animation: robot-ear-wiggle 4.5s ease-in-out infinite;
 }
 
 .robot-ears::before,
 .robot-ears::after {
     content: '';
-    width: 4px;
+    width: 6px;
     height: 10px;
     background-color: var(--notion-border);
-    border-radius: 1px;
+    border-radius: 0; /* Pixel Art */
     transition: background-color 0.3s ease;
 }
 
 /* Animations */
+@keyframes robot-ear-wiggle {
+    0%, 100% { transform: translateY(0); }
+    45% { transform: translateY(1px); }
+    50% { transform: translateY(-4px); }
+    60% { transform: translateY(0); }
+}
 @keyframes robot-jump {
     0%, 100% {
         transform: translateY(0px) scaleY(1);
