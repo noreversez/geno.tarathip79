@@ -1,34 +1,34 @@
-/* Notion Style Design System */
+﻿/* Notion Style Design System */
 :root {
     --notion-bg: #ffffff;
-    --notion-text: #37352f;
-    --notion-text-muted: #787774;
-    --notion-text-light: #9b9a97;
-    --notion-border: rgba(55, 53, 47, 0.09);
-    --notion-bg-hover: rgba(55, 53, 47, 0.03);
-    --notion-bg-gray: #f1f1ef;
-    --notion-blue: #2383e2;
-    --notion-blue-light: rgba(35, 131, 226, 0.07);
-    --notion-gold: #b89025;
-    --notion-gold-light: rgba(212, 175, 55, 0.15);
+    --notion-text: #000000;
+    --notion-text-muted: #666666;
+    --notion-text-light: #999999;
+    --notion-border: #000000;
+    --notion-bg-hover: #f0f0f0;
+    --notion-bg-gray: #f4f4f4;
+    --notion-blue: #0047FF;
+    --notion-blue-light: rgba(0, 71, 255, 0.1);
+    --notion-gold: #FF3300;
+    --notion-gold-light: rgba(255, 51, 0, 0.1);
     
-    --font-notion: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Sarabun", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    --transition-fast: all 0.2s ease;
+    --font-notion: "Inter", "Helvetica Neue", Helvetica, "Sarabun", Arial, sans-serif;
+    --transition-fast: all 0.15s ease-out;
 }
 
 /* Notion Dark Mode Variables */
 body.dark-mode {
-    --notion-bg: #191919;
-    --notion-text: #eaeaea;
-    --notion-text-muted: #9b9a97;
-    --notion-text-light: #5a5a5a;
-    --notion-border: rgba(255, 255, 255, 0.09);
-    --notion-bg-hover: rgba(255, 255, 255, 0.04);
-    --notion-bg-gray: #202020;
-    --notion-blue: #2eaadc;
-    --notion-blue-light: rgba(46, 170, 220, 0.15);
-    --notion-gold: #d4af37;
-    --notion-gold-light: rgba(212, 175, 55, 0.12);
+    --notion-bg: #111111;
+    --notion-text: #ffffff;
+    --notion-text-muted: #a0a0a0;
+    --notion-text-light: #666666;
+    --notion-border: #ffffff;
+    --notion-bg-hover: #222222;
+    --notion-bg-gray: #1a1a1a;
+    --notion-blue: #4d88ff;
+    --notion-blue-light: rgba(77, 136, 255, 0.15);
+    --notion-gold: #ff5533;
+    --notion-gold-light: rgba(255, 85, 51, 0.15);
 }
 
 /* Global Reset & Base Styles */
@@ -105,7 +105,7 @@ body {
     justify-content: center;
     padding: 8px;
     background-color: var(--notion-bg-gray);
-    border-radius: 4px;
+    border-radius: 0;
     color: var(--notion-text-muted);
     transition: background-color 0.3s ease;
 }
@@ -121,7 +121,7 @@ body {
     justify-content: center;
     padding: 8px;
     background-color: var(--notion-bg-gray);
-    border-radius: 4px;
+    border-radius: 0;
     color: var(--notion-text-muted);
     transition: background-color 0.3s ease;
 }
@@ -198,7 +198,7 @@ body {
     color: var(--notion-text-muted);
     text-decoration: none;
     padding: 6px;
-    border-radius: 4px;
+    border-radius: 0;
     transition: var(--transition-fast);
     display: flex;
     align-items: center;
@@ -223,7 +223,7 @@ body {
     border: 1px solid var(--notion-border);
     color: var(--notion-text-muted);
     padding: 6px;
-    border-radius: 4px;
+    border-radius: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -278,7 +278,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--notion-bg);
-    border-radius: 20px;
+    border-radius: 0;
     user-select: none;
     box-shadow: 0 0 0 4px var(--notion-bg);
     margin-bottom: 15px;
@@ -305,7 +305,7 @@ body {
     padding: 2px 8px;
     font-size: 0.8rem;
     font-weight: 500;
-    border-radius: 3px;
+    border-radius: 0;
 }
 
 .badge-blue {
@@ -324,7 +324,7 @@ body {
     gap: 16px;
     background-color: var(--notion-bg-gray);
     border: 1px solid var(--notion-border);
-    border-radius: 4px;
+    border-radius: 0;
     padding: 16px;
     font-size: 0.95rem;
     margin-bottom: 40px;
@@ -368,7 +368,7 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--notion-border);
-    border-radius: 4px;
+    border-radius: 0;
     overflow: hidden;
     transition: border-color 0.3s ease;
 }
@@ -435,14 +435,14 @@ body {
     width: 100%;
     height: 6px;
     background-color: var(--notion-bg-gray);
-    border-radius: 3px;
+    border-radius: 0;
     overflow: hidden;
     transition: background-color 0.3s ease;
 }
 
 .progress-fill {
     height: 100%;
-    border-radius: 3px;
+    border-radius: 0;
     width: 0;
     transition: width 1s ease-in-out;
 }
@@ -464,7 +464,7 @@ body {
     gap: 14px;
     background-color: var(--notion-bg);
     border: 1px solid var(--notion-border);
-    border-radius: 6px;
+    border-radius: 0;
     padding: 14px;
     transition: var(--transition-fast);
 }
@@ -575,7 +575,7 @@ body {
     justify-content: space-between;
     padding: 12px 16px;
     border: 1px solid var(--notion-border);
-    border-radius: 6px;
+    border-radius: 0;
     background-color: var(--notion-bg);
     transition: var(--transition-fast);
 }
@@ -629,7 +629,7 @@ body {
 .gallery-card {
     background-color: var(--notion-bg);
     border: 1px solid var(--notion-border);
-    border-radius: 6px;
+    border-radius: 0;
     padding: 16px;
     transition: var(--transition-fast);
 }
@@ -667,7 +667,7 @@ body {
     gap: 16px;
     padding: 10px 14px;
     background-color: var(--notion-bg-gray);
-    border-radius: 4px;
+    border-radius: 0;
     border: 1px solid var(--notion-border);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -727,7 +727,7 @@ body {
 .notion-input-group textarea {
     padding: 8px 12px;
     border: 1px solid var(--notion-border);
-    border-radius: 4px;
+    border-radius: 0;
     font-family: var(--font-notion);
     font-size: 0.9rem;
     color: var(--notion-text);
@@ -752,7 +752,7 @@ body {
     color: #ffffff;
     border: none;
     padding: 10px 16px;
-    border-radius: 4px;
+    border-radius: 0;
     font-family: var(--font-notion);
     font-weight: 500;
     font-size: 0.9rem;
@@ -819,7 +819,7 @@ body.dark-mode .background-robot {
     right: 5px;
     background-color: var(--notion-bg);
     border: 1px solid var(--notion-border);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 6px 12px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -861,7 +861,7 @@ body.dark-mode .background-robot {
     height: 42px;
     background-color: var(--notion-bg-gray);
     border: 1px solid var(--notion-border);
-    border-radius: 8px;
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -877,7 +877,7 @@ body.dark-mode .background-robot {
     height: 36px;
     background-color: var(--notion-bg-gray);
     border: 1px solid var(--notion-border);
-    border-radius: 6px;
+    border-radius: 0;
     margin-top: 2px;
     z-index: 2;
     position: relative;
@@ -893,7 +893,7 @@ body.dark-mode .background-robot {
     height: 14px;
     background-color: var(--notion-blue-light);
     border: 1px solid var(--notion-border);
-    border-radius: 3px;
+    border-radius: 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -902,7 +902,7 @@ body.dark-mode .background-robot {
     height: 22px;
     background-color: var(--notion-bg-gray);
     border: 1px solid var(--notion-border);
-    border-radius: 3px;
+    border-radius: 0;
     position: absolute;
     z-index: 1;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -1045,7 +1045,7 @@ body.dark-mode .robot-eye {
     width: 4px;
     height: 10px;
     background-color: var(--notion-border);
-    border-radius: 1px;
+    border-radius: 0;
     transition: background-color 0.3s ease;
 }
 
@@ -1133,7 +1133,7 @@ body.dark-mode .robot-eye {
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
@@ -1170,7 +1170,7 @@ body.dark-mode .robot-eye {
     align-items: center;
     gap: 6px;
     padding: 4px 10px;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 13px;
     font-weight: 500;
     background: var(--notion-bg-hover);
@@ -1194,7 +1194,7 @@ body.dark-mode .robot-eye {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--notion-border);
-    border-radius: 8px;
+    border-radius: 0;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     background: var(--notion-bg);
@@ -1235,7 +1235,7 @@ body.dark-mode .robot-eye {
     align-items: flex-start;
     gap: 12px;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 0;
     background: var(--notion-bg-hover);
     border: 1px solid var(--notion-border);
 }
@@ -1269,7 +1269,7 @@ body.dark-mode .robot-eye {
     align-items: center;
     gap: 8px;
     padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 15px;
     font-weight: 500;
     color: var(--notion-text-muted);
