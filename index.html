@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ร.ต.ต. ธราธิป จันทวงศ์ | Portfolio</title>
+    <title>Geno Tarathip | Portfolio</title>
     <!-- Meta tags for SEO -->
-    <meta name="description" content="แฟ้มสะสมผลงานและประวัติการทำงานของ ร.ต.ต. ธราธิป จันทวงศ์ ในรูปแบบ Notion Style สะอาดตา เรียบง่าย และเป็นทางการ">
+    <meta name="description" content="แฟ้มสะสมผลงานและประวัติการทำงานของ ร.ต.ต. ธราธิป จันทวงศ์ (Geno Tarathip) นักพัฒนา AI, LINE Bot และ Cybersecurity">
+    <meta name="keywords" content="ธราธิป จันทวงศ์, นรต.79, Geno Tarathip, nozeal, ตำรวจ, Developer, AI System Development, Cyber Security, LINE Bot">
+    <meta name="author" content="Geno Tarathip">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://genotarathip79.netlify.app/">
+    <meta property="og:title" content="Geno Tarathip | Portfolio">
+    <meta property="og:description" content="แฟ้มสะสมผลงานและประวัติการทำงานของ ร.ต.ต. ธราธิป จันทวงศ์ (Geno Tarathip) นักพัฒนา AI, LINE Bot และ Cybersecurity">
+    <meta property="og:image" content="https://genotarathip79.netlify.app/notion_cover.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://genotarathip79.netlify.app/">
+    <meta property="twitter:title" content="Geno Tarathip | Portfolio">
+    <meta property="twitter:description" content="แฟ้มสะสมผลงานและประวัติการทำงานของ ร.ต.ต. ธราธิป จันทวงศ์ (Geno Tarathip) นักพัฒนา AI, LINE Bot และ Cybersecurity">
+    <meta property="twitter:image" content="https://genotarathip79.netlify.app/notion_cover.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -207,18 +224,33 @@
                     gyroControls: false,
                     minHeight: 180.00,
                     minWidth: 200.00,
-                    backgroundColor: 0xffffff,
-                    skyColor: 0x68b8e8,
-                    cloudColor: 0xffffff,
-                    cloudShadowColor: 0x3d70b3,
-                    sunColor: 0xff9919,
-                    sunGlareColor: 0xff6633,
+                    backgroundColor: 0x000000,
+                    skyColor: 0xff6b6b, /* Sunset Pink/Orange */
+                    cloudColor: 0xffa07a, /* Salmon clouds */
+                    cloudShadowColor: 0x4a235a, /* Deep purple shadows */
+                    sunColor: 0xff4500, /* Orange-Red Sun */
+                    sunGlareColor: 0xffd700, /* Gold glare */
                     sunPosition: 1.5,
                     speed: 1.2
                 });
             }
         });
     </script>
+    <style>
+        /* 3D Pixel Style Overlay */
+        #vanta-cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(45deg, rgba(0,0,0,0.15) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15)), 
+                linear-gradient(45deg, rgba(0,0,0,0.15) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15));
+            background-size: 4px 4px;
+            background-position: 0 0, 2px 2px;
+            pointer-events: none; /* Let clicks pass through */
+            z-index: 5;
+        }
+    </style>
 
     <!-- Main JavaScript -->
     <script src="app.js"></script>
