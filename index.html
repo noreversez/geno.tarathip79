@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร.ต.ต. ธราธิป จันทวงศ์ | Portfolio</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="แฟ้มสะสมผลงานและประวัติการทำงานของ ร.ต.ต. ธราธิป จันทวงศ์ ในรูปแบบ Notion Style สะอาดตา เรียบง่าย และเป็นทางการ">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Notion Style Navigation Header -->
+    <header class="notion-header">
+        <div class="notion-breadcrumbs">
+            <span class="breadcrumb-item">Workspace</span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">
+                <i data-lucide="shield" class="breadcrumb-icon"></i> ร.ต.ต. ธราธิป จันทวงศ์
+            </span>
+        </div>
+        <nav class="notion-nav">
+            <a href="#about" class="nav-link" title="ประวัติโดยย่อ"><i data-lucide="user"></i></a>
+            <a href="#certifications" class="nav-link" title="การฝึกอบรมพิเศษ"><i data-lucide="graduation-cap"></i></a>
+            <a href="#timeline" class="nav-link" title="เส้นทางการทำงาน"><i data-lucide="briefcase"></i></a>
+            <a href="#publications" class="nav-link" title="บทความและวิชาการ"><i data-lucide="book-open"></i></a>
+            <a href="#achievements" class="nav-link" title="ผลงานดีเด่นและรางวัล"><i data-lucide="award"></i></a>
+            <a href="#contact" class="nav-link" title="ติดต่อประสานงาน"><i data-lucide="mail"></i></a>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" title="สลับโหมดสว่าง/มืด"><i data-lucide="moon"></i></button>
+        </nav>
+    </header>
+
+    <!-- Notion Cover Image -->
+    <div class="notion-cover">
+        <img src="notion_cover.png" alt="Cover Image" class="cover-img">
+    </div>
+
+    <!-- Main Container -->
+    <main class="notion-page-container">
+        
+        <!-- Page Icon & Header Info -->
+        <div class="page-header-wrapper">
+            <div class="page-icon">
+                <i data-lucide="user-round" class="header-user-icon"></i>
+            </div>
+            <h1 class="page-title">ร.ต.ต. ธราธิป จันทวงศ์</h1>
+            <div class="page-meta">
+                <span class="badge badge-blue">สำนักงานตำรวจแห่งชาติ</span>
+                <span class="badge badge-gold">นรต. รุ่นที่ 79</span>
+            </div>
+        </div>
+
+
+
+        <!-- Notion Callout Box (Mission Statement) -->
+        <div class="notion-callout">
+            <div class="callout-emoji-wrapper">
+                <i data-lucide="target" class="callout-lucide-icon"></i>
+            </div>
+            <div class="callout-content">
+                <strong>ปณิธานการทำงาน:</strong> มุ่งมั่นปฏิบัติหน้าที่ด้วยความซื่อสัตย์สุจริต นำเทคโนโลยีสารสนเทศเข้ามาวิเคราะห์เพื่อยกระดับการสืบสวนและป้องกันปราบปรามอาชญากรรม พร้อมยึดหลักกฎหมายและมวลชนสัมพันธ์เพื่อความสงบเรียบร้อยของสังคม
+            </div>
+        </div>
+
+        <!-- Two Column Layout: Main content / Sidebar -->
+        <!-- Working Projects Gallery Layout -->
+        <div class="notion-projects-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-bottom: 40px;">
+            
+            <!-- Dummy Project 1 -->
+            <a href="#" class="project-card" style="display: flex; flex-direction: column; border: 1px solid var(--notion-border); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; background: var(--notion-bg);">
+                <div class="project-cover" style="height: 140px; background-color: var(--notion-blue-light); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="bot" style="width: 48px; height: 48px; color: var(--notion-blue);"></i>
+                </div>
+                <div class="project-info" style="padding: 16px;">
+                    <div style="margin-bottom: 8px;"><span class="badge badge-blue">🟢 กำลังพัฒนา (In Progress)</span></div>
+                    <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">ระบบไลน์บอทสืบค้นข้อมูลศิษย์เก่า (นรต.)</h3>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--notion-text-muted); line-height: 1.5;">แชทบอทอัจฉริยะที่ช่วยให้ผู้ใช้สามารถค้นหาข้อมูลรุ่นพี่รุ่นน้องได้อย่างรวดเร็ว พัฒนาด้วย Python และเชื่อมต่อ API ของ LINE</p>
+                </div>
+            </a>
+
+            <!-- Dummy Project 2 -->
+            <a href="#" class="project-card" style="display: flex; flex-direction: column; border: 1px solid var(--notion-border); border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; background: var(--notion-bg);">
+                <div class="project-cover" style="height: 140px; background-color: var(--notion-gold-light); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="file-search" style="width: 48px; height: 48px; color: var(--notion-gold);"></i>
+                </div>
+                <div class="project-info" style="padding: 16px;">
+                    <div style="margin-bottom: 8px;"><span class="badge badge-gold">🟡 วางโครงสร้าง (Planning)</span></div>
+                    <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">ระบบวิเคราะห์แผนประทุษกรรม (OSINT Tool)</h3>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--notion-text-muted); line-height: 1.5;">เครื่องมือช่วยรวบรวมและวิเคราะห์ข้อมูลจากแหล่งข้อมูลเปิด (Open Source) เพื่อสนับสนุนการสืบสวนคดีอาชญากรรมทางเทคโนโลยี</p>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Notion Style Footer -->
+    <footer class="notion-footer">
+        <p>© 2026 ร.ต.ต. ธราธิป จันทวงศ์ | Portfolio จัดทำอย่างเรียบง่ายสไตล์ Notion</p>
+    </footer>
+
+    <!-- Interactive Background Waving Full-Body Robot -->
+    <div class="background-robot" id="bg-robot">
+        <div class="robot-speech-bubble" id="robot-bubble">สวัสดีครับมีอะไรให้ช่วยมั้ย</div>
+        <div class="robot-container" id="robot-interactive-body">
+            <div class="robot-arm arm-left"></div>
+            <div class="robot-head" id="robot-head-element">
+                <div class="robot-ears"></div>
+                <div class="robot-face">
+                    <div class="robot-cheeks">
+                        <div class="robot-cheek cheek-left"></div>
+                        <div class="robot-cheek cheek-right"></div>
+                    </div>
+                    <div class="robot-eyes">
+                        <div class="robot-eye" id="eye-left">
+                            <div class="robot-pupil"></div>
+                        </div>
+                        <div class="robot-eye" id="eye-right">
+                            <div class="robot-pupil"></div>
+                        </div>
+                    </div>
+                    <div class="robot-mouth"></div>
+                </div>
+            </div>
+            <div class="robot-body">
+                <div class="robot-chest-plate"></div>
+            </div>
+            <div class="robot-arm arm-right"></div>
+            <div class="robot-legs">
+                <div class="robot-leg leg-left"></div>
+                <div class="robot-leg leg-right"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
+
