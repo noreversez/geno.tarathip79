@@ -1026,7 +1026,41 @@ body.dark-mode .robot-eye {
     background-color: var(--notion-text-muted);
     border: none;
     border-radius: 0; /* Pixel Art */
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    animation: robot-mouth-talk 4s ease-in-out infinite;
+}
+
+/* Expressions */
+.robot-head.expr-happy .robot-mouth {
+    width: 18px;
+    height: 6px;
+    background-color: #ff6b81;
+}
+.robot-head.expr-happy .robot-eye {
+    height: 4px;
+    margin-top: 4px;
+}
+
+.robot-head.expr-surprised .robot-mouth {
+    width: 8px;
+    height: 10px;
+}
+.robot-head.expr-surprised .robot-eye {
+    height: 16px;
+    width: 16px;
+}
+.robot-head.expr-surprised .robot-pupil {
+    width: 4px;
+    height: 4px;
+}
+
+.robot-head.expr-sleepy .robot-eye {
+    height: 4px;
+    margin-top: 4px;
+    background-color: var(--notion-border);
+}
+.robot-head.expr-sleepy .robot-mouth {
+    width: 8px;
 }
 
 .robot-ears {
@@ -1056,6 +1090,14 @@ body.dark-mode .robot-eye {
     50% { transform: translateY(-4px); }
     60% { transform: translateY(0); }
 }
+@keyframes robot-mouth-talk {
+    0%, 100% { transform: scaleY(1); }
+    10% { transform: scaleY(1.5); }
+    20% { transform: scaleY(0.8); }
+    30% { transform: scaleY(1.3); }
+    40%, 90% { transform: scaleY(1); }
+}
+
 @keyframes robot-jump {
     0%, 100% {
         transform: translateY(0px) scaleY(1);

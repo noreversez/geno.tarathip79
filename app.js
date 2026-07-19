@@ -191,11 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Speech Bubble Loop & Click Interaction
     // ==========================================
     const messages = [
-        "สวัสดีครับผู้กอง! 👮‍♂️",
-        "มีคดีอะไรให้ผมช่วยสืบไหมครับ?",
-        "ระบบวิเคราะห์ OSINT พร้อมครับ! 🔍",
-        "วันนี้รับกาแฟไหมครับ? ☕",
-        "Pixel Art นี่มันเท่จริงๆ! 👾"
+        "สวัสดีครับ 🤖",
+        "ยินดีต้อนรับครับ!",
+        "ทักทายครับผม 👋",
+        "สวัสดีครับผู้กอง! 👮‍♂️"
     ];
     let currentMsgIndex = 0;
     const bubble = document.getElementById('robot-bubble');
@@ -220,25 +219,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start cycling every 8 seconds
     messageCycleInterval = setInterval(cycleMessages, 8000);
 
-    // Click reaction (Blush & Random Message)
+    // Expression cycling
+    const expressions = ['expr-neutral', 'expr-happy', 'expr-surprised', 'expr-sleepy'];
+    setInterval(() => {
+        if (!robotHead || isShy) return;
+        expressions.forEach(expr => robotHead.classList.remove(expr));
+        const randomExpr = expressions[Math.floor(Math.random() * expressions.length)];
+        if (randomExpr !== 'expr-neutral') {
+            robotHead.classList.add(randomExpr);
+        }
+    }, 4500);
+
+    // Click reaction (Blush & Random Greeting)
     if (bgRobot && robotBody && robotHead && bubble) {
         bgRobot.addEventListener('click', () => {
             if (isShy) return; // Prevent double click spamming
             isShy = true;
 
             // Trigger blush and wiggle classes
+            expressions.forEach(expr => robotHead.classList.remove(expr));
             robotHead.classList.add('blushing');
+            robotHead.classList.add('expr-happy'); // Force happy on click
             robotBody.classList.add('clicked-shy');
             
             // Random message on click
             bubble.style.opacity = 0;
             setTimeout(() => {
                 const clickMessages = [
-                    "โอ๊ะ! จิ้มเค้าทำไม 😳",
-                    "ระบบพร้อมลุยครับ! 🚀",
-                    "มีอะไรให้รับใช้ครับผู้กอง?",
-                    "ตึ๊ดๆๆ... กำลังประมวลผล 🤖",
-                    "ชอบ Pixel Art เหมือนกันเลย!"
+                    "สวัสดีครับ!",
+                    "ทักทายครับผม 🤖",
+                    "ยินดีที่ได้รู้จักครับ 👋",
+                    "สวัสดีครับ 👮‍♂️"
                 ];
                 bubble.textContent = clickMessages[Math.floor(Math.random() * clickMessages.length)];
                 bubble.style.opacity = 1;
@@ -247,6 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Revert after 2.5 seconds
             setTimeout(() => {
                 robotHead.classList.remove('blushing');
+                robotHead.classList.remove('expr-happy');
                 robotBody.classList.remove('clicked-shy');
                 
                 bubble.style.opacity = 0;
