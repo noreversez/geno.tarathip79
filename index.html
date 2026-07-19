@@ -217,7 +217,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             if (typeof VANTA !== 'undefined') {
-                VANTA.CLOUDS({
+                const vantaEffect = VANTA.CLOUDS({
                     el: "#vanta-cover",
                     mouseControls: true,
                     touchControls: true,
@@ -233,22 +233,120 @@
                     sunPosition: 1.5,
                     speed: 1.2
                 });
+
+                // Day to Night Cycle
+                let time = 0;
+                setInterval(() => {
+                    time += 0.005;
+                    const cycle = (Math.sin(time) + 1) / 2; // 0 to 1
+                    
+                    function rgbToHex(r, g, b) {
+                        return (r << 16) | (g << 8) | b;
+                    }
+
+                    // Sunset to Night interpolation
+                    const skyR = 255 - (255 - 10) * cycle;
+                    const skyG = 107 - (107 - 20) * cycle;
+                    const skyB = 107 - (107 - 60) * cycle;
+
+                    const cloudR = 255 - (255 - 40) * cycle;
+                    const cloudG = 160 - (160 - 50) * cycle;
+                    const cloudB = 122 - (122 - 80) * cycle;
+                    
+                    if (vantaEffect && vantaEffect.setOptions) {
+                        vantaEffect.setOptions({
+                            skyColor: rgbToHex(skyR, skyG, skyB),
+                            cloudColor: rgbToHex(cloudR, cloudG, cloudB)
+                        });
+                    }
+                }, 100);
+
+                // Embers (Floating Pixels)
+                const cover = document.getElementById('vanta-cover');
+                setInterval(() => {
+                    if(document.visibilityState !== 'visible') return;
+                    const ember = document.createElement('div');
+                    ember.className = 'pixel-ember';
+                    ember.style.left = Math.random() * 100 + '%';
+                    ember.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    cover.appendChild(ember);
+                    setTimeout(() => ember.remove(), 5000);
+                }, 300);
+
+                // Shooting Stars
+                setInterval(() => {
+                    if(document.visibilityState !== 'visible' || Math.random() > 0.4) return;
+                    const star = document.createElement('div');
+                    star.className = 'shooting-star';
+                    star.style.top = (Math.random() * 40) + '%';
+                    star.style.left = (Math.random() * 100 + 20) + '%';
+                    cover.appendChild(star);
+                    setTimeout(() => star.remove(), 1000);
+                }, 2000);
             }
         });
     </script>
     <style>
-        /* 3D Pixel Style Overlay */
+        /* 3D Pixel Style Overlay & CRT Effect */
         #vanta-cover::after {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
                 linear-gradient(45deg, rgba(0,0,0,0.15) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15)), 
-                linear-gradient(45deg, rgba(0,0,0,0.15) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15));
-            background-size: 4px 4px;
-            background-position: 0 0, 2px 2px;
-            pointer-events: none; /* Let clicks pass through */
+                linear-gradient(45deg, rgba(0,0,0,0.15) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.15)),
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%); /* Scanlines */
+            background-size: 4px 4px, 4px 4px, 100% 4px;
+            background-position: 0 0, 2px 2px, 0 0;
+            pointer-events: none;
             z-index: 5;
+            animation: flicker 0.15s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.95; }
+            50% { opacity: 1; }
+            100% { opacity: 0.98; }
+        }
+
+        /* Floating Pixel Embers */
+        .pixel-ember {
+            position: absolute;
+            bottom: -10px;
+            width: 4px;
+            height: 4px;
+            background-color: #ff9919;
+            box-shadow: 0 0 5px #ff4500;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 6;
+            animation: floatEmber linear forwards;
+        }
+
+        @keyframes floatEmber {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            50% { transform: translateY(-50px) translateX(20px); }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100px) translateX(-20px); opacity: 0; }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff);
+            pointer-events: none;
+            z-index: 6;
+            transform: rotate(-45deg);
+            animation: shoot 0.8s linear forwards;
+        }
+
+        @keyframes shoot {
+            0% { transform: rotate(-45deg) translateX(50px); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: rotate(-45deg) translateX(-200px); opacity: 0; }
         }
     </style>
 
